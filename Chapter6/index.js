@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const server = express();
 
 const Router = require('./routes/product');
@@ -20,6 +21,7 @@ async function main() {
 // //middleware to use request body
 
 server.use(express.json());
+server.use(cors())
 server.use('/products',Router.productRouter);
 
 
