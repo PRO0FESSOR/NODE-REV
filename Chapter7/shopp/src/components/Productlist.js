@@ -12,6 +12,14 @@ const Productlist = () => {
         setProducts(Productsdata.data)
     }
 
+    const handleDelete = async(id)=>{
+        // const res = await axios.delete(`http://localhost:8080/products/${id}`);
+        // if(res.data._id)
+        // {
+        //     setProducts(products.filter(p=>p._id!==res.data._id));
+        // }
+    }
+
     useEffect(()=>{
         GetAllData();
     },[])
@@ -22,7 +30,7 @@ const Productlist = () => {
 
         {products.map((product)=>{
             // console.log(product)
-            return <Product product={product}/>
+            return <Product product={product} handleDelete={handleDelete}/>
         })}
     </>
 

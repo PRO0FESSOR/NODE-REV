@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-const Product = ({product}) => {
+const Product = ({product ,handleDelete}) => {
   return (
     <>
         <>
@@ -28,7 +28,7 @@ const Product = ({product}) => {
               <div className="d-flex justify-content-between align-items-center">
                 <span className="discount">-25%</span>
                 <span className="wishlist">
-                  <button onClick={async()=>{await axios.delete(`http://localhost:8080/products/${product._id}`)}}><i className="fa fa-heart-o" /></button>
+                  <button onClick={handleDelete(product._id)}><i className="fa fa-heart-o" /></button>
                 </span>
               </div>
             </div>
